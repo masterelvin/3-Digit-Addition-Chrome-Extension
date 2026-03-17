@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name":"3-Digit Addition Trainer",
+    "version":"1.0",
+    "description":"Practice 3-digit addition problems and track your score.",
+    "action": {
+        "deafault_popup": "popup.html",
+        "deafault_title": "3-Digit Addition Trainer"
+    },
+    "permissions": [
+        "storage"
+    ]
+}
