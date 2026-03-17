@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f0f4ff;
+  --surface: #ffffff;
+  --surface-alt: #f7f9ff;
+  --blue-1: #2563eb;
+  --blue-2: #1d4ed8;
+  --blue-light: #dbeafe;
+  --green: #16a34a;
+  --green-light: #dcfce7;
+  --red: #dc2626;
+  --red-light: #fee2e2;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border: #e2e8f0;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(37, 99, 235, 0.08);
+  --shadow-btn: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  width: 340px;
+  min-height: 420px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--blue-1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-btn);
+}
+
+.header-text h1 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.header-text p {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ── Score Card ── */
+.score-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+}
+
+.score-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.score-group {
+  text-align: center;
+}
+
+.score-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.score-value.correct { color: var(--green); }
+.score-value.incorrect { color: var(--red); }
+
+.score-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+}
+
+.accuracy-group {
+  text-align: right;
+}
+
+.accuracy-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--blue-1);
+  line-height: 1;
+}
+
+/* ── Problem Card ── */
+.problem-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 18px 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.problem-display {
+  font-family: 'DM Mono', monospace;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  line-height: 1;
+}
+
+.problem-display .operator {
+  color: var(--blue-1);
+  margin: 0 4px;
+}
+
+.problem-display .question {
+  color: var(--text-muted);
+}
+
+/* ── Input Row ── */
+.input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.answer-input {
+  flex: 1;
+  height: 44px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  -moz-appearance: textfield;
+}
+
+.answer-input::-webkit-inner-spin-button,
+.answer-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+.answer-input::placeholder { color: var(--text-muted); font-size: 14px; font-family: 'DM Sans', sans-serif; }
+
+.answer-input:focus {
+  border-color: var(--blue-1);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  background: #fff;
+}
+
+.answer-input.correct-input {
+  border-color: var(--green);
+  background: var(--green-light);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+.answer-input.incorrect-input {
+  border-color: var(--red);
+  background: var(--red-light);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+/* ── Buttons ── */
+.btn {
+  height: 44px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s, background 0.15s;
+  white-space: nowrap;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--blue-1);
+  color: #fff;
+  padding: 0 20px;
+  box-shadow: var(--shadow-btn);
+}
+
+.btn-primary:hover { background: var(--blue-2); box-shadow: 0 4px 12px rgba(37,99,235,0.35); }
+
+.btn-secondary {
+  background: var(--surface-alt);
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border);
+  width: 100%;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.btn-secondary:hover { background: var(--blue-light); color: var(--blue-1); border-color: var(--blue-1); }
+
+/* ── Feedback ── */
+.feedback {
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: var(--radius-sm);
+  padding: 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s;
+  margin-top: 10px;
+}
+
+.feedback.visible { opacity: 1; }
+
+.feedback.correct-fb {
+  background: var(--green-light);
+  color: var(--green);
+}
+
+.feedback.incorrect-fb {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+.feedback-icon { font-size: 15px; }
+
+/* ── Reset ── */
+.reset-row {
+  text-align: center;
+}
+
+.btn-ghost {
+  background: none;
+  border: none;
+  font-size: 11px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.btn-ghost:hover { color: var(--red); }
+
+/* ── Shake Animation ── */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-5px); }
+  40%       { transform: translateX(5px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+.shake { animation: shake 0.35s ease; }
+
+/* ── Pop Animation ── */
+@keyframes pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.pop { animation: pop 0.25s ease; }
