@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3-Digit Addition Trainer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="header">
+        <div class="header-icon">➕</div>
+        <div class="header-text">
+            <p>3-digit mental math practicer</p>
+        </div>
+    
+        <div class="score-card">
+            <div class="score-group">
+                <div class="score-label">Correct</div>
+                <div class="score-value correct" id="score-correct">0</div>
+            </div>
+        </div>
+        <div class="score-divider"></div>
+        <div class="score-group">
+            <div class="score-label">Wrong</div>
+            <div class="score-value incorrect" id="score-incorrect">0</div>
+        </div>
+        <div class="score-divider"></div>
+        <div class="accuracy-group">
+            <div class="score-label">Accuracy</div>
+            <div class="score-value accuracy" id="score-accuracy">-</div>
+        </div>
+    </div>
+
+    <div class="problem-card">
+        <div class="problem-display" id="problem-display">
+            <span id="num-a">???</span>
+            <span id="operator">+</span>
+            <span id="num-b">???</span>
+            <span class="operator">=</span>
+            <span class="question">?</span>
+        </div>
+
+        <div class="input-row">
+            <input
+            type="number"
+            id="answer-input"
+            placeholder="Your answer"
+            min="0"
+            autocomplete="off"
+            />
+            <button class="btn btn-primary" id="btn-submit">Check</button>
+        </div>
+
+        <div class="feedback" id="feedback"></div>
+        <span class="feedback-icon" id="feedback-icon"></span>
+      <span id="feedback-text"></span>
+    </div>
+    <button class="btn-secondary" id="btn-new">New Problem</button>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
+
+        
